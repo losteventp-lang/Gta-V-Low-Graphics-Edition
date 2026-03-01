@@ -194,41 +194,44 @@ export default function App() {
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex justify-between items-end pointer-events-auto sm:hidden mb-8 px-2">
-          <div className="grid grid-cols-3 gap-4">
-            <div />
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); keys.add('w'); }} 
-              onPointerUp={(e) => { e.preventDefault(); keys.delete('w'); }}
-              onPointerLeave={(e) => { e.preventDefault(); keys.delete('w'); }}
-              className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-full border-2 border-white/30 flex items-center justify-center active:scale-95 active:bg-white/40 transition-transform"
-            >
-              <Zap size={24} className="text-white" />
-            </button>
-            <div />
+        <div className="flex justify-between items-end pointer-events-auto sm:hidden mb-12 px-4">
+          {/* Left Side: Steering */}
+          <div className="flex gap-4">
             <button 
               onPointerDown={(e) => { e.preventDefault(); keys.add('a'); }} 
               onPointerUp={(e) => { e.preventDefault(); keys.delete('a'); }}
               onPointerLeave={(e) => { e.preventDefault(); keys.delete('a'); }}
-              className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-full border-2 border-white/30 flex items-center justify-center active:scale-95 active:bg-white/40 transition-transform"
+              className="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-2xl border-2 border-white/20 flex items-center justify-center active:scale-95 active:bg-white/40 transition-all shadow-lg"
             >
-              <div className="rotate-180 text-white text-xl">▶</div>
-            </button>
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); keys.add('s'); }} 
-              onPointerUp={(e) => { e.preventDefault(); keys.delete('s'); }}
-              onPointerLeave={(e) => { e.preventDefault(); keys.delete('s'); }}
-              className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-full border-2 border-white/30 flex items-center justify-center active:scale-95 active:bg-white/40 transition-transform"
-            >
-              <div className="rotate-90 text-white text-xl">▶</div>
+              <div className="rotate-180 text-white text-3xl">▶</div>
             </button>
             <button 
               onPointerDown={(e) => { e.preventDefault(); keys.add('d'); }} 
               onPointerUp={(e) => { e.preventDefault(); keys.delete('d'); }}
               onPointerLeave={(e) => { e.preventDefault(); keys.delete('d'); }}
-              className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-full border-2 border-white/30 flex items-center justify-center active:scale-95 active:bg-white/40 transition-transform"
+              className="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-2xl border-2 border-white/20 flex items-center justify-center active:scale-95 active:bg-white/40 transition-all shadow-lg"
             >
-              <div className="text-white text-xl">▶</div>
+              <div className="text-white text-3xl">▶</div>
+            </button>
+          </div>
+
+          {/* Right Side: Gas/Brake */}
+          <div className="flex flex-col gap-4">
+            <button 
+              onPointerDown={(e) => { e.preventDefault(); keys.add('w'); }} 
+              onPointerUp={(e) => { e.preventDefault(); keys.delete('w'); }}
+              onPointerLeave={(e) => { e.preventDefault(); keys.delete('w'); }}
+              className="w-20 h-20 bg-emerald-500/30 backdrop-blur-xl rounded-2xl border-2 border-emerald-500/50 flex items-center justify-center active:scale-95 active:bg-emerald-500/60 transition-all shadow-lg"
+            >
+              <Zap size={32} className="text-white fill-white" />
+            </button>
+            <button 
+              onPointerDown={(e) => { e.preventDefault(); keys.add('s'); }} 
+              onPointerUp={(e) => { e.preventDefault(); keys.delete('s'); }}
+              onPointerLeave={(e) => { e.preventDefault(); keys.delete('s'); }}
+              className="w-20 h-14 bg-red-500/30 backdrop-blur-xl rounded-2xl border-2 border-red-500/50 flex items-center justify-center active:scale-95 active:bg-red-500/60 transition-all shadow-lg"
+            >
+              <div className="rotate-90 text-white text-xl">▶</div>
             </button>
           </div>
         </div>
